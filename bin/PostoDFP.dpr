@@ -1,0 +1,14 @@
+program PostoDFP;
+
+uses
+  Vcl.Forms,
+  uFrmPrincipal in 'view\uFrmPrincipal.pas' {FrmPrincipal};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.Run;
+end.
