@@ -148,6 +148,14 @@
             <Form>FrmAbastecimento</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="controller\AbastecimentoController.pas"/>
+        <DCCReference Include="DAO\interfaces\uIAbastecimento.pas"/>
+        <DCCReference Include="DAO\uDmAbastecimento.pas">
+            <Form>DmAbastecimento</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="DAO\FDAbastecimento.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

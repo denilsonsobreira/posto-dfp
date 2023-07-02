@@ -79,3 +79,29 @@ end^
 
 SET TERM ; ^
 
+CREATE TABLE ABASTECIMENTO (
+    ID INTEGER NOT NULL,
+    LITROS NUMERIC(15,2) NOT NULL,
+    VALOR_TOTAL NUMERIC(15,2) NOT NULL,
+    IMPOSTO NUMERIC(15,2) NOT NULL,
+    DATA DATE NOT NULL,
+    BOMBA_ID INTEGER NOT NULL);
+
+ALTER TABLE ABASTECIMENTO
+ADD CONSTRAINT PK_ABASTECIMENTO
+PRIMARY KEY (ID);
+
+CREATE SEQUENCE GEN_ABASTECIMENTO_ID;
+
+SET TERM ^ ;
+
+create trigger abastecimento_bi for abastecimento
+active before insert position 0
+as
+begin
+  if (new.id is null) then
+    new.id = gen_id(gen_abastecimento_id,1);
+end^
+
+SET TERM ; ^
+

@@ -29,7 +29,6 @@ end;
 destructor TFDValores.Destroy;
 begin
   inherited;
-  FreeAndNil(DmValores);
 end;
 
 function TFDValores.ListaValores: TDataSource;

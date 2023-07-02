@@ -11,6 +11,7 @@ type
       FId: Integer;
       FTanque: TTanque;
       FNome: String;
+      FTipoCombustivel: Integer;
       procedure SetId(const Value: Integer);
       procedure SetNome(const Value: String);
       procedure SetTanque(const Value: TTanque);
@@ -26,6 +27,9 @@ type
       [NotNull('O campo Tanque não pode ser vazio.')]
       [ColumnInfo('TANQUE_ID', 'Código do Tanque', 150)]
       property Tanque : TTanque read FTanque write SetTanque;
+
+      [ColumnInfo('TIPO_COMBUSTIVEL', 'Código do Tanque', 150)]
+      property TipoCombustivel: Integer read FTipoCombustivel;
   end;
 
 implementation

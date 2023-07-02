@@ -92,7 +92,6 @@ begin
   finally
     ValoresController.Free;
   end;
-
 end;
 
 procedure TFrmValores.EdtValorGasolinaKeyPress(Sender: TObject; var Key: Char);

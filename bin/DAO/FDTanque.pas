@@ -30,12 +30,14 @@ constructor TFDTanque.Create;
 begin
   if DmTanque = nil then
     Application.CreateForm(TDmTanque, DmTanque);
+
+  DmTanque.QryTanque.Active := True;
 end;
 
 destructor TFDTanque.Destroy;
 begin
   inherited;
-  FreeAndNil(DmTanque);
+
 end;
 
 function TFDTanque.Editar(Id: Integer): TDataSource;

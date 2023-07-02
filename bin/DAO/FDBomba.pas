@@ -33,7 +33,7 @@ end;
 destructor TFDBomba.Destroy;
 begin
   inherited;
-  FreeAndNil(DmBomba);
+
 end;
 
 function TFDBomba.Editar(Id: Integer): TDataSource;

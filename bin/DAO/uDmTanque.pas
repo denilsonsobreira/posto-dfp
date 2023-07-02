@@ -41,7 +41,7 @@ begin
     begin
       case QryTanqueTIPO_COMBUSTIVEL.AsInteger of
         0: Text := 'Gasolina';
-        1: Text := 'Óleo Disel';
+        1: Text := 'Óleo Diesel';
       end;
     end
   else

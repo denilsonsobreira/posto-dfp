@@ -40,7 +40,8 @@ begin
             begin
               Component := aForm.FindComponent(fieldRtti.Name);
               if Component is TEdit then
-                TEdit(Component).Text := aDataSource.DataSet.FieldByName(Bind(cstAttr).Field).AsString;
+                  if aDataSource.DataSet.FindField(Bind(cstAttr).Field) <> nil then
+                    TEdit(Component).Text := aDataSource.DataSet.FieldByName(Bind(cstAttr).Field).AsString;
 
               if Component is TComboBox then
                 TComboBox(Component).ItemIndex := aDataSource.DataSet.FieldByName(Bind(cstAttr).Field).AsInteger;

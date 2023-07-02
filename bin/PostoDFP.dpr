@@ -26,7 +26,11 @@ uses
   uValores in 'model\uValores.pas',
   ValoresController in 'controller\ValoresController.pas',
   FDValores in 'DAO\FDValores.pas',
-  uFrmAbastecimento in 'view\uFrmAbastecimento.pas' {FrmAbastecimento};
+  uFrmAbastecimento in 'view\uFrmAbastecimento.pas' {FrmAbastecimento},
+  AbastecimentoController in 'controller\AbastecimentoController.pas',
+  uIAbastecimento in 'DAO\interfaces\uIAbastecimento.pas',
+  uDmAbastecimento in 'DAO\uDmAbastecimento.pas' {DmAbastecimento: TDataModule},
+  FDAbastecimento in 'DAO\FDAbastecimento.pas';
 
 {$R *.res}
 
