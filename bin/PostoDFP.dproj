@@ -90,6 +90,60 @@
             <Form>FrmPrincipal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="model\uTanque.pas"/>
+        <DCCReference Include="model\uBomba.pas"/>
+        <DCCReference Include="view\uFrmBase.pas">
+            <Form>FrmBase</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="view\uFrmBomba.pas">
+            <Form>FrmBomba</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="controller\BombaController.pas"/>
+        <DCCReference Include="view\uFrmTanque.pas">
+            <Form>FrmTanque</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="DAO\uDmConexao.pas">
+            <Form>DmConexao</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="controller\TanqueController.pas"/>
+        <DCCReference Include="DAO\interfaces\uITanque.pas"/>
+        <DCCReference Include="DAO\uDmTanque.pas">
+            <Form>DmTanque</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="DAO\FDTanque.pas"/>
+        <DCCReference Include="utils\RttiUtils.pas"/>
+        <DCCReference Include="utils\CustomAttributesUtils.pas"/>
+        <DCCReference Include="DAO\interfaces\uIBomba.pas"/>
+        <DCCReference Include="DAO\FDBomba.pas"/>
+        <DCCReference Include="DAO\uDmBomba.pas">
+            <Form>DmBomba</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="view\uFrmConsulta.pas">
+            <Form>FrmConsulta</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="view\uFrmValores.pas">
+            <Form>FrmValores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="DAO\uDmValores.pas">
+            <Form>DmValores</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="DAO\interfaces\uIValores.pas"/>
+        <DCCReference Include="model\uValores.pas"/>
+        <DCCReference Include="controller\ValoresController.pas"/>
+        <DCCReference Include="DAO\FDValores.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

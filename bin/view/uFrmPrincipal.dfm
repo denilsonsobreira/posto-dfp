@@ -16,6 +16,7 @@ object FrmPrincipal: TFrmPrincipal
   Position = poScreenCenter
   Visible = True
   WindowState = wsMaximized
+  OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 14
   object PnlPrincipal: TPanel
@@ -27,7 +28,6 @@ object FrmPrincipal: TFrmPrincipal
     Color = clGradientActiveCaption
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 1
     object btnValores: TBitBtn
       Left = 344
       Top = 21
@@ -334,6 +334,7 @@ object FrmPrincipal: TFrmPrincipal
       Layout = blGlyphTop
       ParentFont = False
       TabOrder = 2
+      OnClick = btnValoresClick
     end
     object btnAbastecer: TBitBtn
       Left = 9
@@ -959,9 +960,11 @@ object FrmPrincipal: TFrmPrincipal
       Caption = 'Cadastros'
       object MItemTanques: TMenuItem
         Caption = '&Tanques'
+        OnClick = MItemTanquesClick
       end
       object MItemBombas: TMenuItem
         Caption = '&Bombas'
+        OnClick = MItemBombasClick
       end
     end
   end
