@@ -7,6 +7,8 @@ uses
 
 type
   TFDBomba = class(TInterfacedObject, IBomba)
+    constructor Create;
+    destructor Destroy;override;
     procedure Salvar(Bomba: TBomba; Id: Integer = 0);
     function ListaBombas(Nome: String = ''): TDataSource;
     procedure ListaBombaPorId(Id: Integer);
@@ -18,9 +20,21 @@ type
 implementation
 
 uses
-  uDmBomba, System.SysUtils;
+  uDmBomba, System.SysUtils, Vcl.Forms;
 
 { TFDBomba }
+
+constructor TFDBomba.Create;
+begin
+  if DmBomba = nil then
+    Application.CreateForm(TDmBomba, DmBomba);
+end;
+
+destructor TFDBomba.Destroy;
+begin
+  inherited;
+  FreeAndNil(DmBomba);
+end;
 
 function TFDBomba.Editar(Id: Integer): TDataSource;
 begin

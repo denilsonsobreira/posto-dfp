@@ -21,6 +21,7 @@ type
     procedure MItemBombasClick(Sender: TObject);
     procedure MItemTanquesClick(Sender: TObject);
     procedure btnValoresClick(Sender: TObject);
+    procedure btnAbastecerClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,9 +34,17 @@ var
 implementation
 
 uses
-  uFrmBomba, uFrmTanque, uFrmValores ;
+  uFrmBomba, uFrmTanque, uFrmValores, uFrmAbastecimento ;
 
 {$R *.dfm}
+
+procedure TFrmPrincipal.btnAbastecerClick(Sender: TObject);
+begin
+  if FrmAbastecimento = nil then
+    Application.CreateForm(TFrmAbastecimento, FrmAbastecimento);
+
+  FrmAbastecimento.ShowModal;
+end;
 
 procedure TFrmPrincipal.btnValoresClick(Sender: TObject);
 begin

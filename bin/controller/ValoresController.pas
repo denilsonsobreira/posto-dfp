@@ -11,7 +11,7 @@ type
       FValoresDAO: IValores;
     public
       constructor create;
-      destructor destroy; override;
+      destructor Destroy; override;
       procedure Salvar(Valores: TValores);
       procedure ListaValores(aForm: TForm);
   end;

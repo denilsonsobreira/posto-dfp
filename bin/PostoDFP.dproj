@@ -144,6 +144,10 @@
         <DCCReference Include="model\uValores.pas"/>
         <DCCReference Include="controller\ValoresController.pas"/>
         <DCCReference Include="DAO\FDValores.pas"/>
+        <DCCReference Include="view\uFrmAbastecimento.pas">
+            <Form>FrmAbastecimento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -2,7 +2,7 @@ object FrmValores: TFrmValores
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
-  Caption = 'Configurar Valores'
+  Caption = 'Valores'
   ClientHeight = 321
   ClientWidth = 214
   Color = clMedGray

@@ -25,7 +25,8 @@ uses
   uIValores in 'DAO\interfaces\uIValores.pas',
   uValores in 'model\uValores.pas',
   ValoresController in 'controller\ValoresController.pas',
-  FDValores in 'DAO\FDValores.pas';
+  FDValores in 'DAO\FDValores.pas',
+  uFrmAbastecimento in 'view\uFrmAbastecimento.pas' {FrmAbastecimento};
 
 {$R *.res}
 
@@ -34,10 +35,5 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TDmConexao, DmConexao);
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
-  Application.CreateForm(TDmTanque, DmTanque);
-  Application.CreateForm(TDmBomba, DmBomba);
-  Application.CreateForm(TFrmConsulta, FrmConsulta);
-  Application.CreateForm(TFrmValores, FrmValores);
-  Application.CreateForm(TDmValores, DmValores);
   Application.Run;
 end.

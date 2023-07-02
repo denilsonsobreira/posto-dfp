@@ -642,6 +642,7 @@ object FrmPrincipal: TFrmPrincipal
       Layout = blGlyphTop
       ParentFont = False
       TabOrder = 0
+      OnClick = btnAbastecerClick
     end
     object btnRelatorio: TBitBtn
       Left = 175

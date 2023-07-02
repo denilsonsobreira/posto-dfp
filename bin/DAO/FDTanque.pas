@@ -8,6 +8,8 @@ uses
 type
 
   TFDTanque = class(TInterfacedObject, ITanque)
+    constructor Create;
+    destructor Destroy;override;
     procedure Salvar(Tanque: TTanque; Id: Integer = 0);
     function ListaTanques(Nome: String = ''): TDataSource;
     procedure ListaTanquePorId(Id: Integer);
@@ -20,9 +22,21 @@ type
 implementation
 
 uses
-  uDmTanque, System.SysUtils;
+  uDmTanque, System.SysUtils, Vcl.Forms;
 
 { TFDTanque }
+
+constructor TFDTanque.Create;
+begin
+  if DmTanque = nil then
+    Application.CreateForm(TDmTanque, DmTanque);
+end;
+
+destructor TFDTanque.Destroy;
+begin
+  inherited;
+  FreeAndNil(DmTanque);
+end;
 
 function TFDTanque.Editar(Id: Integer): TDataSource;
 begin

@@ -7,13 +7,30 @@ uses
 
 type
   TFDValores = class(TInterfacedObject, IValores)
+    constructor Create;
+    destructor Destroy;override;
     procedure Salvar(Valores: TValores);
     function ListaValores(): TDataSource;
   end;
 
 implementation
 
+uses
+  Vcl.Forms, System.SysUtils;
+
 { TFDValores }
+
+constructor TFDValores.Create;
+begin
+  if DmValores = nil then
+    Application.CreateForm(TDmValores, DmValores);
+end;
+
+destructor TFDValores.Destroy;
+begin
+  inherited;
+  FreeAndNil(DmValores);
+end;
 
 function TFDValores.ListaValores: TDataSource;
 begin

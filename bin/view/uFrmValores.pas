@@ -39,6 +39,7 @@ type
     { Private declarations }
     procedure ApenasNumerico(var key: char);
     procedure Configurar;
+    function StringToCurrency(Edit: TEdit): Currency;
   public
     { Public declarations }
   end;
@@ -67,9 +68,9 @@ begin
   ValoresController := TValoresController.create;
   Valores := TValores.Create;
   try
-    Valores.ValorLitroGasolina := StrToCurr(EdtValorGasolina.Text);
-    Valores.ValorLitroOleoDiesel := StrToCurr(EdtValorOleoDiesel.Text);
-    Valores.ValorImposto := StrToCurr(EdtValorImposto.Text);
+    Valores.ValorLitroGasolina := StringToCurrency(EdtValorGasolina);
+    Valores.ValorLitroOleoDiesel := StringToCurrency(EdtValorOleoDiesel);
+    Valores.ValorImposto := StringToCurrency(EdtValorImposto);
     ValoresController.Salvar(Valores);
     Application.MessageBox('Registro Salvo com sucesso', 'Sucesso', MB_OK+MB_ICONINFORMATION);
   finally
@@ -123,6 +124,22 @@ end;
 procedure TFrmValores.FormShow(Sender: TObject);
 begin
   Configurar;
+end;
+
+function TFrmValores.StringToCurrency(Edit: TEdit): Currency;
+begin
+  try
+    if Trim(Edit.Text) = '0' then
+      begin
+        Edit.SetFocus;
+        abort;
+      end;
+    Result := StrToCurr(Edit.Text);
+  Except
+    Edit.SetFocus;
+    raise Exception.Create('O Valor ' + Edit.Text + ' não é válido');
+  end;
+
 end;
 
 end.
