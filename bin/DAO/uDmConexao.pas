@@ -27,7 +27,7 @@ var
 implementation
 
 uses
-  Vcl.Forms, System.IniFiles;
+  Vcl.Forms, System.IniFiles, Winapi.Windows;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
@@ -52,7 +52,10 @@ begin
 
     ArquivoINI.Free;
   except on E:Exception do
-    raise Exception.Create('Não foi possivel conectar com o banco de dados.');
+    begin
+      Application.MessageBox('Não foi possivel conectar com o banco de dados.', 'Atenção', MB_ICONWARNING);
+      Application.Terminate;
+    end;
   end;
 end;
 

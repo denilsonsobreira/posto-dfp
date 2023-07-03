@@ -17,7 +17,6 @@ type
     btnValores: TBitBtn;
     btnAbastecer: TBitBtn;
     btnRelatorio: TBitBtn;
-    procedure FormDestroy(Sender: TObject);
     procedure MItemBombasClick(Sender: TObject);
     procedure MItemTanquesClick(Sender: TObject);
     procedure btnValoresClick(Sender: TObject);
@@ -61,11 +60,6 @@ begin
     Application.CreateForm(TFrmValores, FrmValores);
 
   FrmValores.ShowModal;
-end;
-
-procedure TFrmPrincipal.FormDestroy(Sender: TObject);
-begin
-  ReportMemoryLeaksOnShutdown := True;
 end;
 
 procedure TFrmPrincipal.MItemBombasClick(Sender: TObject);

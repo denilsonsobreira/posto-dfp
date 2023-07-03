@@ -16,7 +16,6 @@ object FrmPrincipal: TFrmPrincipal
   Position = poScreenCenter
   Visible = True
   WindowState = wsMaximized
-  OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 14
   object PnlPrincipal: TPanel
