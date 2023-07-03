@@ -1,6 +1,8 @@
 # posto-dfp
 
-Requisitos funcionais:
+# Sistema de controle de Abastecimento(POSTO-DFP)
+
+# Requisitos funcionais:
 Você foi contratado para analisar e desenvolver um software para gerenciar os abastecimentos e tanques de combustíveis do posto DFP. 
 Sabendo disso, leia com atenção as informações que o gerente do posto descreveu:
 
@@ -9,7 +11,7 @@ Sabendo disso, leia com atenção as informações que o gerente do posto descre
     Cada bomba está ligada a um tanque. No posto  DFP existem dois tanques, um de gasolina e um de óleo diesel. Para cada tanque, duas bombas de combustível;
     Também gostaria de um relatório em que os abastecimentos fossem agrupados, exibindo o dia, o tanque, a bomba e o valor. E ao final do relatório a soma total do período.
     
-Requisitos não funcionais:
+# Requisitos não funcionais:
 
     A aplicação deve ser simples (Minimum Viable Product);
     Utilize boas práticas de programação e conhecimentos que você julga interessantes e que mostrem suas habilidades técnicas;
@@ -27,3 +29,10 @@ Requisitos não funcionais que serão muito bem pontuados:
 5.    Clean Code;
 6.    Rtti, Helpers
 7.    Firedac
+
+8.<b>Informações do Projeto</b>
+<br/>
+Versão do Delphi usada: XE6.<br/>
+Conexão com o banco de dados: Firedac.<br/>
+Banco de dados: Firebird.<br/>
+Gerador de relatórios: Fortes Report.<br/>
