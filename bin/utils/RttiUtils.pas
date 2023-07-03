@@ -81,10 +81,11 @@ begin
                   if ColumnInfo(custAtr).DBName = aDataSource.DataSet.Fields[i].FieldName then
                     begin
                       Grid.Columns[i].Title.Caption := ColumnInfo(custAtr).Name;
-                      Grid.Columns[i].Title.Font.Size := 10;
+                      Grid.Columns[i].Title.Font.Size := 12;//10
                       Grid.Columns[i].Title.Font.Style := [TFontStyle.fsBold];
                       Grid.Columns[i].Width := ColumnInfo(custAtr).Width;
                       Grid.Columns[i].Alignment := taLeftJustify;
+                      Grid.Columns[i].Font.Size := 10;
                     end;
 
                 end;

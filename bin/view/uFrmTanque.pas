@@ -211,7 +211,7 @@ function TFrmTanque.TxtParaTpCombustivel(aValue: String): TTpCombustivel;
 begin
   if aValue = 'Gasolina' then
     Result := TTpCombustivel.Gasolina
-  else if aValue = 'Óleo diesel' then
+  else if aValue = 'Óleo Diesel' then
     Result := TTpCombustivel.OleoDisel;
 end;
 

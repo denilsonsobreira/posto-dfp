@@ -22,6 +22,7 @@ type
     DsBombasTipos: TDataSource;
     QryBombasTiposNOME: TStringField;
     QryBombasTiposTIPO_COMBUSTIVEL: TIntegerField;
+    QryBombasTiposID: TIntegerField;
     procedure QryBombasTiposTIPO_COMBUSTIVELGetText(Sender: TField;
       var Text: string; DisplayText: Boolean);
   private

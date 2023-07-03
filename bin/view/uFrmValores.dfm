@@ -119,7 +119,7 @@ object FrmValores: TFrmValores
     ParentBackground = False
     TabOrder = 4
     object BtnSalvar: TBitBtn
-      Left = 114
+      Left = 117
       Top = 6
       Width = 96
       Height = 41

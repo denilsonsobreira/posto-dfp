@@ -14,6 +14,7 @@ type
       destructor Destroy; override;
       procedure Salvar(Valores: TValores);
       procedure ListaValores(aForm: TForm);
+      function ValorImposto:Currency;
   end;
 
 implementation
@@ -43,6 +44,11 @@ procedure TValoresController.Salvar(Valores: TValores);
 begin
   TRttiUtils.ValidarCampos(Valores);
   FValoresDAO.Salvar(Valores);
+end;
+
+function TValoresController.ValorImposto: Currency;
+begin
+  Result := FValoresDAO.ValorImposto;
 end;
 
 end.

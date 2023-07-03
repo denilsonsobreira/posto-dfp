@@ -26,7 +26,7 @@ object FrmBase: TFrmBase
     Margins.Top = 0
     Margins.Right = 0
     Margins.Bottom = 0
-    ActivePage = TsCadastrar
+    ActivePage = TsPesquisar
     Align = alClient
     TabOrder = 0
     object TsPesquisar: TTabSheet
@@ -136,7 +136,7 @@ object FrmBase: TFrmBase
         Width = 586
         Height = 198
         Align = alClient
-        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
         TabOrder = 1
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
@@ -217,7 +217,7 @@ object FrmBase: TFrmBase
     Left = 16
     Top = 312
     Bitmap = {
-      494C0101080030009C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010108003000A00010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

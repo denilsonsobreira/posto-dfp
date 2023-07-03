@@ -30,7 +30,10 @@ uses
   AbastecimentoController in 'controller\AbastecimentoController.pas',
   uIAbastecimento in 'DAO\interfaces\uIAbastecimento.pas',
   uDmAbastecimento in 'DAO\uDmAbastecimento.pas' {DmAbastecimento: TDataModule},
-  FDAbastecimento in 'DAO\FDAbastecimento.pas';
+  FDAbastecimento in 'DAO\FDAbastecimento.pas',
+  uAbastecimento in 'model\uAbastecimento.pas',
+  uFrmImpressao in 'view\uFrmImpressao.pas' {FrmImpressao},
+  uFrmRprImpressao in 'view\uFrmRprImpressao.pas' {FrmRprImpressao};
 
 {$R *.res}
 

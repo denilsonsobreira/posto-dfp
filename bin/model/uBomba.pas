@@ -28,7 +28,7 @@ type
       [ColumnInfo('TANQUE_ID', 'Código do Tanque', 150)]
       property Tanque : TTanque read FTanque write SetTanque;
 
-      [ColumnInfo('TIPO_COMBUSTIVEL', 'Código do Tanque', 150)]
+      [ColumnInfo('TIPO_COMBUSTIVEL', 'Tipo de Combustível', 180)]
       property TipoCombustivel: Integer read FTipoCombustivel;
   end;
 

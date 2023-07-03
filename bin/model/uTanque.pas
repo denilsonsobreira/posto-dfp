@@ -27,7 +27,7 @@ type
       [MinLength(5, 'O Campo nome deve ter no mínimo 5 caracteres.')]
       property Nome : String read FNome write SetNome;
 
-      [ColumnInfo('TIPO_COMBUSTIVEL', 'Tipo de Combustível', 150)]
+      [ColumnInfo('TIPO_COMBUSTIVEL', 'Tipo de Combustível', 180)]
       property TipoCombustivel : TTpCombustivel read FTipoCombustivel write SetTipoCombustivel;
   end;
 

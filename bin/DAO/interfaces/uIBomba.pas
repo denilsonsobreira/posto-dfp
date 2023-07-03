@@ -13,6 +13,7 @@ type
     procedure ListaBombaPorId(Id: Integer);
     function Editar(Id: Integer): TDataSource;
     procedure Excluir(Id: Integer);
+    function RetornaBombaPorId(Id: Integer):TBomba;
   end;
 
 implementation

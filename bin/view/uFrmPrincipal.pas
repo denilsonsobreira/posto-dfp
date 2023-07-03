@@ -22,6 +22,7 @@ type
     procedure MItemTanquesClick(Sender: TObject);
     procedure btnValoresClick(Sender: TObject);
     procedure btnAbastecerClick(Sender: TObject);
+    procedure btnRelatorioClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,7 +35,7 @@ var
 implementation
 
 uses
-  uFrmBomba, uFrmTanque, uFrmValores, uFrmAbastecimento ;
+  uFrmBomba, uFrmTanque, uFrmValores, uFrmAbastecimento, uFrmImpressao ;
 
 {$R *.dfm}
 
@@ -44,6 +45,14 @@ begin
     Application.CreateForm(TFrmAbastecimento, FrmAbastecimento);
 
   FrmAbastecimento.ShowModal;
+end;
+
+procedure TFrmPrincipal.btnRelatorioClick(Sender: TObject);
+begin
+  if FrmImpressao = nil then
+    Application.CreateForm(TFrmImpressao, FrmImpressao);
+
+  FrmImpressao.ShowModal;
 end;
 
 procedure TFrmPrincipal.btnValoresClick(Sender: TObject);

@@ -156,6 +156,15 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="DAO\FDAbastecimento.pas"/>
+        <DCCReference Include="model\uAbastecimento.pas"/>
+        <DCCReference Include="view\uFrmImpressao.pas">
+            <Form>FrmImpressao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="view\uFrmRprImpressao.pas">
+            <Form>FrmRprImpressao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

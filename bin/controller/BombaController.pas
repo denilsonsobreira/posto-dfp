@@ -21,6 +21,7 @@ type
       function RetornaTanque(TanqueId: Integer): TTanque;
       function RetornaNomeTanque(Id: Integer): String;
       procedure Excluir(Id: Integer);
+      function RetornaBombaPorId(Id: Integer): TBomba;
   end;
 
 implementation
@@ -61,6 +62,11 @@ end;
 function TBombaController.PesquisaTanques: TDatasource;
 begin
   Result := FTanqueDAO.ListaTanques();
+end;
+
+function TBombaController.RetornaBombaPorId(Id: Integer): TBomba;
+begin
+  Result := FBombaDAO.RetornaBombaPorId(Id);
 end;
 
 function TBombaController.RetornaNomeTanque(Id: Integer): String;

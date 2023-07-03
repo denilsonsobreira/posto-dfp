@@ -950,6 +950,7 @@ object FrmPrincipal: TFrmPrincipal
       Layout = blGlyphTop
       ParentFont = False
       TabOrder = 1
+      OnClick = btnRelatorioClick
     end
   end
   object MainMenu: TMainMenu

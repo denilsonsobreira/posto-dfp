@@ -57,10 +57,16 @@ object DmAbastecimento: TDmAbastecimento
     Active = True
     Connection = DmConexao.Conexao
     SQL.Strings = (
-      'SELECT B.NOME, T.TIPO_COMBUSTIVEL FROM BOMBA B'
+      'SELECT B.ID, B.NOME, T.TIPO_COMBUSTIVEL FROM BOMBA B'
       'LEFT JOIN tanque T ON B.TANQUE_ID = T.ID;')
     Left = 24
     Top = 120
+    object QryBombasTiposID: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
     object QryBombasTiposNOME: TStringField
       FieldName = 'NOME'
       Origin = 'NOME'

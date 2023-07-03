@@ -4,8 +4,8 @@ object FrmAbastecimento: TFrmAbastecimento
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Abastecer'
-  ClientHeight = 571
-  ClientWidth = 994
+  ClientHeight = 481
+  ClientWidth = 735
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,15 +20,15 @@ object FrmAbastecimento: TFrmAbastecimento
   PixelsPerInch = 96
   TextHeight = 13
   object PnlPagamento: TPanel
-    Left = 712
+    Left = 453
     Top = 0
     Width = 282
-    Height = 571
+    Height = 481
     Align = alRight
-    BevelOuter = bvNone
+    BevelOuter = bvLowered
     Color = clGradientActiveCaption
     ParentBackground = False
-    TabOrder = 0
+    TabOrder = 1
     object LblG: TLabel
       Left = 16
       Top = 23
@@ -108,8 +108,8 @@ object FrmAbastecimento: TFrmAbastecimento
       ParentFont = False
     end
     object LblFormaAbastecimento: TLabel
-      Left = 16
-      Top = 197
+      Left = 48
+      Top = 163
       Width = 203
       Height = 19
       Caption = 'Forma de Abastecimento'
@@ -121,8 +121,8 @@ object FrmAbastecimento: TFrmAbastecimento
       ParentFont = False
     end
     object LblLitros: TLabel
-      Left = 10
-      Top = 266
+      Left = 42
+      Top = 226
       Width = 66
       Height = 29
       BiDiMode = bdLeftToRight
@@ -136,8 +136,8 @@ object FrmAbastecimento: TFrmAbastecimento
       ParentFont = False
     end
     object LblValor: TLabel
-      Left = 16
-      Top = 310
+      Left = 48
+      Top = 270
       Width = 62
       Height = 29
       Caption = 'Valor:'
@@ -149,14 +149,53 @@ object FrmAbastecimento: TFrmAbastecimento
       ParentFont = False
     end
     object Total: TLabel
-      Left = 18
-      Top = 382
+      Left = 50
+      Top = 331
       Width = 79
       Height = 33
       Caption = 'Total:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -27
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object LblTipoValor: TLabel
+      Left = 254
+      Top = 278
+      Width = 22
+      Height = 19
+      Caption = 'R$'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object LblLitro: TLabel
+      Left = 254
+      Top = 229
+      Width = 9
+      Height = 19
+      Caption = 'L'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object LblTipoTotal: TLabel
+      Left = 254
+      Top = 339
+      Width = 22
+      Height = 19
+      Caption = 'R$'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
@@ -191,9 +230,9 @@ object FrmAbastecimento: TFrmAbastecimento
       ParentFont = False
       TabOrder = 1
     end
-    object ComboBox1: TComboBox
-      Left = 16
-      Top = 222
+    object CbTipoAbastecimento: TComboBox
+      Left = 48
+      Top = 188
       Width = 201
       Height = 24
       Style = csDropDownList
@@ -204,16 +243,18 @@ object FrmAbastecimento: TFrmAbastecimento
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 2
+      OnChange = CbTipoAbastecimentoChange
       Items.Strings = (
-        'Por Valor'
-        'Por Litro')
+        'Por Litro'
+        'Por Valor')
     end
     object EdtLitros: TEdit
-      Left = 103
-      Top = 263
+      Left = 135
+      Top = 223
       Width = 113
       Height = 38
       BorderStyle = bsNone
+      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -24
@@ -221,13 +262,16 @@ object FrmAbastecimento: TFrmAbastecimento
       Font.Style = []
       ParentFont = False
       TabOrder = 3
+      OnChange = EdtLitrosChange
+      OnKeyPress = EdtLitrosKeyPress
     end
     object EdtValor: TEdit
-      Left = 103
-      Top = 307
+      Left = 135
+      Top = 267
       Width = 113
       Height = 38
       BorderStyle = bsNone
+      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -24
@@ -235,13 +279,16 @@ object FrmAbastecimento: TFrmAbastecimento
       Font.Style = []
       ParentFont = False
       TabOrder = 4
+      OnChange = EdtValorChange
+      OnKeyPress = EdtValorKeyPress
     end
     object EdtTotal: TEdit
-      Left = 103
-      Top = 379
+      Left = 135
+      Top = 328
       Width = 113
       Height = 41
       BorderStyle = bsNone
+      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -27
@@ -250,9 +297,9 @@ object FrmAbastecimento: TFrmAbastecimento
       ParentFont = False
       TabOrder = 5
     end
-    object BitBtn1: TBitBtn
-      Left = 32
-      Top = 464
+    object BtnAbastecer: TBitBtn
+      Left = 56
+      Top = 386
       Width = 193
       Height = 81
       Caption = 'Abastecer'
@@ -780,23 +827,30 @@ object FrmAbastecimento: TFrmAbastecimento
       Layout = blGlyphRight
       ParentFont = False
       TabOrder = 6
+      OnClick = BtnAbastecerClick
     end
   end
   object PnlBomba: TPanel
     Left = 0
     Top = 0
-    Width = 712
-    Height = 571
+    Width = 453
+    Height = 481
     Align = alClient
     BevelOuter = bvNone
-    TabOrder = 1
+    TabOrder = 0
     object GridPesquisaBomba: TDBGrid
       Left = 0
       Top = 67
-      Width = 712
-      Height = 397
+      Width = 453
+      Height = 195
       Align = alClient
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
       Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      ParentFont = False
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -808,17 +862,17 @@ object FrmAbastecimento: TFrmAbastecimento
     end
     object PnlCamposBomba: TPanel
       Left = 0
-      Top = 464
-      Width = 712
-      Height = 107
+      Top = 262
+      Width = 453
+      Height = 219
       Align = alBottom
       BevelOuter = bvNone
-      Color = clGradientActiveCaption
+      Color = clMedGray
       ParentBackground = False
       TabOrder = 1
       object LblBomba: TLabel
-        Left = 18
-        Top = 37
+        Left = 19
+        Top = 21
         Width = 105
         Height = 33
         Caption = 'Bomba:'
@@ -830,8 +884,8 @@ object FrmAbastecimento: TFrmAbastecimento
         ParentFont = False
       end
       object LblTpCombustivel: TLabel
-        Left = 291
-        Top = 37
+        Left = 19
+        Top = 69
         Width = 178
         Height = 33
         Caption = 'Combust'#237'vel:'
@@ -843,9 +897,9 @@ object FrmAbastecimento: TFrmAbastecimento
         ParentFont = False
       end
       object EdtBomba: TEdit
-        Left = 129
-        Top = 42
-        Width = 140
+        Left = 203
+        Top = 18
+        Width = 150
         Height = 30
         BorderStyle = bsNone
         Enabled = False
@@ -858,9 +912,9 @@ object FrmAbastecimento: TFrmAbastecimento
         TabOrder = 0
       end
       object EdtTpCombuistivel: TEdit
-        Left = 475
-        Top = 42
-        Width = 140
+        Left = 203
+        Top = 74
+        Width = 150
         Height = 30
         BorderStyle = bsNone
         Enabled = False
@@ -876,11 +930,11 @@ object FrmAbastecimento: TFrmAbastecimento
     object PnlPesquisa: TPanel
       Left = 0
       Top = 0
-      Width = 712
+      Width = 453
       Height = 67
       Align = alTop
       BevelOuter = bvNone
-      Color = clGradientActiveCaption
+      Color = clMedGray
       ParentBackground = False
       TabOrder = 2
       object LblPesquisar: TLabel
@@ -1040,21 +1094,21 @@ object FrmAbastecimento: TFrmAbastecimento
           0000000000000000000000000000000000000000000000000000000000000000
           000000000000}
         ParentFont = False
-        TabOrder = 0
+        TabOrder = 1
         OnClick = BtnPesquisarClick
       end
       object EdtPesquisar: TEdit
         Left = 18
         Top = 33
         Width = 215
-        Height = 25
+        Height = 24
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 1
+        TabOrder = 0
         OnKeyPress = EdtPesquisarKeyPress
       end
     end
