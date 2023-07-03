@@ -209,6 +209,11 @@ begin
   AbastecimentoController := TAbastecimentoController.Create;
   try
     AbastecimentoController.CarregaValores(Self);
+    if (EdtValorGasolina.Text = '') or (EdtValorOleoDiesel.Text = '') then
+      begin
+        Application.MessageBox('Configure os valores antes de abastecer', 'Atenção', MB_ICONWARNING);
+      end;
+
   finally
     AbastecimentoController.Free;
   end;
@@ -304,11 +309,14 @@ end;
 
 procedure TFrmAbastecimento.PreencherCamposBomba;
 begin
-  EdtBomba.Text := GridPesquisaBomba.DataSource.DataSet.FieldByName('nome').AsString;
-  case GridPesquisaBomba.DataSource.DataSet.FieldByName('TIPO_COMBUSTIVEL').AsInteger of
-    0: EdtTpCombuistivel.Text := 'Gasolina';
-    1: EdtTpCombuistivel.Text := 'Óleo Diesel';
-  end;
+  if GridPesquisaBomba.DataSource <> nil then
+    begin
+      EdtBomba.Text := GridPesquisaBomba.DataSource.DataSet.FieldByName('nome').AsString;
+      case GridPesquisaBomba.DataSource.DataSet.FieldByName('TIPO_COMBUSTIVEL').AsInteger of
+        0: EdtTpCombuistivel.Text := 'Gasolina';
+        1: EdtTpCombuistivel.Text := 'Óleo Diesel';
+      end;
+    end;
 
   if (CbTipoAbastecimento.ItemIndex = 0) and (EdtLitros.Text <> '') then
     CalculoPorLitro
