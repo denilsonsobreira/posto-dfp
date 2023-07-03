@@ -30,7 +30,7 @@ Requisitos não funcionais que serão muito bem pontuados:
 6.    Rtti, Helpers
 7.    Firedac
 
-8.<b>Informações do Projeto</b>
+<b>Informações do Projeto</b>
 <br/>
 Versão do Delphi usada: XE6.<br/>
 Conexão com o banco de dados: Firedac.<br/>
