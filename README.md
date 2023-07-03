@@ -19,10 +19,11 @@ Requisitos não funcionais:
     Utilizar banco de dados firebird ou sqlite  (enviar junto com o projeto o script de criação do banco) .
     
 Requisitos não funcionais que serão muito bem pontuados:
-1.Tempo de Entrega.
-2.Usar github para publicação do projeto.
-3.Usar Delphi XE6
-4.Orientação a Objetos
-5.Clean Code;
-6.Rtti, Helpers
-7.Firedac
+
+1.    Tempo de Entrega.
+2.    Usar github para publicação do projeto.
+3.    Usar Delphi XE6
+4.    Orientação a Objetos
+5.    Clean Code;
+6.    Rtti, Helpers
+7.    Firedac
